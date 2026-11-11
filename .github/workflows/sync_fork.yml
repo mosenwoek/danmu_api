@@ -1,7 +1,4 @@
 name: Fork Sync
-permissions:
-  contents: write
-  workflows: write
 
 
 on:
@@ -13,6 +10,9 @@ jobs:
     sync_with_upstream:
         name: Sync with Upstream
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            workflows: write
         if: ${{ github.event.repository.fork }}
 
         steps:
